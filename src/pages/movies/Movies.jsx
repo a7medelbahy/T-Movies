@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MovieCard from "../../components/MovieCard";
 import Paginate from "../../components/Paginate";
+import { Helmet } from "react-helmet-async";
 
 const Movies = () => {
   const [moviesList, setMoviesList] = useState([]);
@@ -41,9 +42,17 @@ const Movies = () => {
     e.preventDefault();
     searchValue !== "" ? getSearch() : getMovies();
   };
-  
+
   return (
     <div className="movies">
+      <Helmet>
+        <title>Movies</title>
+        <meta
+          name="description"
+          content="most popular and top rated movies you want"
+        />
+        <link rel="canonical" href="/movies" />
+      </Helmet>
       <PageHeader pageTitle="Movies" />
       <div className="container d-flex align-items-center flex-column py-5">
         <div className="search mb-4">

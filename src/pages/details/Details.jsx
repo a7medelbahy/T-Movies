@@ -7,6 +7,7 @@ import MainDetails from "./MainDetails";
 import Cast from "./Cast";
 import Trailer from "./Trailer";
 import Similar from "./Smiliar";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
   const params = useParams();
@@ -47,9 +48,14 @@ const Details = () => {
     getTrailers();
     geSimilar();
   }, [id]);
-  
+
   return (
     <div className="details position-relative">
+      <Helmet>
+        <title>{content.original_title || content.original_name}</title>
+        <meta name="description" content={content.overview} />
+        <link rel="canonical" href="/details/:id/:type" />
+      </Helmet>
       <div className="details-background position-absolute top-0 w-100">
         <img
           src={

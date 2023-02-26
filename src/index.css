@@ -87,4 +87,17 @@ img {
 .swiper-button-next, .swiper-button-prev {
   color: red !important;
   font-weight: bolder !important;
+  font-size: 18px !important;
+  background-color: rgba(225, 225, 225, 0.6);
+  padding: 3px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  width: 35px !important;
+  height: 35px !important;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 20px !important;
 }
